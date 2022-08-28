@@ -1,5 +1,7 @@
 const fs = require('node:fs');
 const apexResults = require('../../commands/apextournamentapi/apexoptions/apexResults');
+const fullapexResults = require('../../commands/apextournamentapi/apexoptions/fullapexResults');
+const quickapexResults = require('../../commands/apextournamentapi/apexoptions/quickapexResults');
 
 module.exports = {
 	data: {
@@ -31,17 +33,12 @@ module.exports = {
 			break;
 
 		case 'second_option':
-			await interaction.editReply({
-				content: `you chose the second option: ${option}`,
-				components: [],
-			});
+			await fullapexResults.execute(interaction, client);
+
 			break;
 
 		case 'third_option':
-			await interaction.editReply({
-				content: `you chose the third option: ${option}`,
-				components: [],
-			});
+			await quickapexResults.execute(interaction, client);
 			break;
 		}
 	},

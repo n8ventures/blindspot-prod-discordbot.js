@@ -24,15 +24,15 @@ module.exports = {
 						value: 'first_option',
 					},
 					{
-						label: 'Full Apex Results',
+						label: 'Quick Apex Results',
 						description:
               'Displays the usual but now includes team numbers and team names.',
-						value: 'second_option',
+						value: 'third_option',
 					},
 					{
-						label: 'Quick Apex Results',
+						label: 'Full Apex Results',
 						description: 'Only displays Total Points.',
-						value: 'third_option',
+						value: 'second_option',
 					},
 				),
 		);
