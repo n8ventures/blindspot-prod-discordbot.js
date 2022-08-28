@@ -9,8 +9,8 @@
 
     -optimized apex-stat-results command feature
         -Apex Results - WORKING ✅
-        -Full Apex Results - WIP 🚧
-        -Quick Apex Result - WIP 🚧
+        -Full Apex Results - WORKING (needs tests) ⚠️
+        -Quick Apex Result - WORKING (needs tests) ⚠️
 
     -current features:
         -Display Apex Ranked Map Rotation
