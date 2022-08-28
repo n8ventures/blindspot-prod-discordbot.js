@@ -1,8 +1,8 @@
 # BlindSpot Productions Bot
 
-# WIP
+### version 2.0.0 (alpha)
 
-version 2.0.0 (alpha) 
+ 
     -updated code to discord v14
         -Supports slash commands.
         -DM-commands supported.
