@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# additional files
+config.json
+.vscode/
+ignoreme/
+ignoreme/const moment = require('moment-timezone'.js

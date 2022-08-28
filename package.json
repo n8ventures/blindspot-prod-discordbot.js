@@ -1,16 +1,39 @@
 {
-  "name": "betatestjs",
-  "version": "1.0.0",
-  "description": "testing bot",
+  "name": "blindspot-prod-discord-bot",
+  "version": "2.0.0-alpha",
+  "description": "Apex Tournament API to calculate Apex Custom Tournament points",
   "main": "index.js",
   "scripts": {
-    "test": "yawa"
+    "test": "node ."
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n8ventures/ApexAPI-Discord-OAS-BOT.js.git"
+  },
+  "keywords": [
+    "apex",
+    "tournament",
+    "calculate",
+    "points",
+    "apex",
+    "legends"
+  ],
+  "author": "N8VENTURES",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n8ventures/ApexAPI-Discord-OAS-BOT.js/issues"
+  },
+  "homepage": "https://github.com/n8ventures/ApexAPI-Discord-OAS-BOT.js#readme",
   "dependencies": {
-    "discord.js": "^13.6.0",
-    "moment-timezone": "^0.5.34",
-    "node-fetch": "^2.6.7"
+    "@discordjs/rest": "^1.1.0",
+    "discord.js": "^14.3.0",
+    "moment-timezone": "^0.5.37",
+    "node-fetch": "^2.6.6",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.7.1"
   }
 }
