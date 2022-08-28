@@ -130,7 +130,7 @@ dist
 .pnp.*
 
 # additional files
-config.json
 .vscode/
 ignoreme/
 ignoreme/const moment = require('moment-timezone'.js
+config.json
