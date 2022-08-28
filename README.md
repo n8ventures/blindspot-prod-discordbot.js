@@ -1,4 +1,4 @@
-# BlindSpot Productions Bot
+# BlindSpot Productions Discord Bot
 
 ### version 2.0.0 (alpha)
 
