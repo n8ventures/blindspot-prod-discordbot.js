@@ -1,15 +1,12 @@
 const fs = require('node:fs');
 const {
-	SlashCommandBuilder,
 	ActionRowBuilder,
 	SelectMenuBuilder,
 } = require('discord.js');
 // const wait = require('node:timers/promises').setTimeout;
 
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('apexprivateresults-retry')
-		.setDescription('Retrieve Apex Legends Private Match Results'),
+	name: 'apexprivateresults-retry',
 
 	async execute(interaction) {
 		const row = new ActionRowBuilder().addComponents(
@@ -38,7 +35,7 @@ module.exports = {
 		);
 		const ApexOptionsClear = '';
 		const jsonContent = JSON.stringify(ApexOptionsClear);
-		fs.writeFileSync('./commands/apextournamentapi/apexoptions/apexoption.json', jsonContent);
+		fs.writeFileSync('./commands/apextournamentapi/apexoptions/apexmodules/apexoption.json', jsonContent);
 
 		// await interaction.deferReply();
 		// await wait(1000);

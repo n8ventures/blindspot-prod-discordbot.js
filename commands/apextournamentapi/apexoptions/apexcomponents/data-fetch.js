@@ -3,17 +3,16 @@ const wait = require('node:timers/promises').setTimeout;
 const { EmbedBuilder } = require('discord.js');
 const moment = require('moment-timezone');
 
-const apexRetry = require('./apex-retry');
+const apexRetry = require('../../retrymodules/apex-retry');
 
 const fs = require('node:fs');
+
 const apexTokenJson = fs.readFileSync(
-	'./commands/apextournamentapi/apexoptions/apexstattoken.json',
+	'./commands/apextournamentapi/apexoptions/apexmodules/apexstattoken.json',
 	{ encoding: 'utf8', flag: 'r' },
 );
 const apexToken = JSON.parse(apexTokenJson);
-
 const apexAPI = 'https://r5-crossplay.r5prod.stryder.respawn.com/privatematch/?token=';
-
 const grabData = apexAPI + apexToken;
 
 // ------------------------------------------------
@@ -25,13 +24,13 @@ const grabData = apexAPI + apexToken;
 
 module.exports = {
 	data: {
-		name: 'fullapexResults',
+		name: 'datafetch',
 	},
 	async execute(interaction, client) {
 		const url = grabData;
 		await fetch(url)
 			.then((res) => res.json())
-			.then((json) => {
+			.then(async (json) => {
 				let x = 0;
 				let m = -1;
 				let n = 0;
@@ -42,23 +41,29 @@ module.exports = {
 				}
 
 				if (isEmpty(json)) {
-					interaction.editReply(
-						'**⚠   MATCHES NOT DETECTED!   ⚠**' +
-              '\n \n' +
-              '**⚠  PLEASE INPUT CORRECT TOKEN OR WAIT FOR THE MATCH TO FINISH!!!**  ⚠',
-					);
-					wait(3000);
-					apexRetry.execute(interaction, client);
+					await interaction.reply({
+						content: '**⚠   MATCHES NOT DETECTED!   ⚠** \n\n**⚠  PLEASE INPUT CORRECT TOKEN OR WAIT FOR THE MATCH TO FINISH!!!**  ⚠',
+						ephemeral: true,
+					});
+					await wait(3000);
+					await apexRetry.execute(interaction, client);
 				}
 				else {
 					for (; x < json.matches.length;) {
 						x++;
+					} if (x === 1) {
+						await interaction.editReply(
+							'***' + x + ' MATCH FOUND!' + '*** ' + ' ✅',
+						);
 					}
-					interaction.editReply(
-						'***' + x + ' MATCH/ES FOUND!' + '*** ' + ' ✅',
-					);
-					wait(1000);
-					interaction.editReply('*Loading matches...* ⌛\n');
+					else {
+						await interaction.editReply(
+							'***' + x + ' MATCHES FOUND!' + '*** ' + ' ✅',
+						);
+					}
+					await wait(1000);
+					await interaction.editReply('*Loading matches...* ⌛\n');
+					await wait(2000);
 					while (m < x - 1) {
 						m++;
 						n++;
@@ -83,18 +88,10 @@ module.exports = {
 								});
 							}
 						});
-						// function numOnly(value) {
-						// 	if (typeof (val) === 'number') {
-						// 		return val;
-						// 	}
-						// }
 						const date_select = mt.slice(m, n);
 						const datestrng = JSON.stringify(date_select);
 						const res = datestrng.replace(/\D/g, '');
 						const unixTimestamp = res;
-						// var date = new Date(unixTimestamp*1000);
-						// var nt = date.toString();
-						// var ns = nt.replace('(China Standard Time)','')
 						const date = new Date(unixTimestamp * 1000);
 						const nt = moment
 							.tz(date, 'Asia/Manila')
@@ -108,6 +105,7 @@ module.exports = {
 						matches?.forEach((player) => {
 							if (m1.some((p) => p.teamName === player.teamName)) {
 								const i = m1.findIndex((p) => p.teamName === player.teamName);
+								// placement points
 								switch (m1[i].teamPlacement) {
 								case 1:
 									pp = 12;
@@ -177,29 +175,85 @@ module.exports = {
 
 						const ResultsEmbed = new EmbedBuilder()
 							.setColor(0x0099FF)
-							.setTitle('ApexAPI DiscordBot \n' + '**🎲 MATCH **' + parseInt(parseInt(x) + parseInt(b) + parseInt(1)) + '\n 🕒 ' + nt)
+							.setTitle('Apex Tournament API Discord Bot \n' + '**🎲 MATCH **' + parseInt(parseInt(x) + parseInt(b) + parseInt(1)) + '\n 🕒 ' + nt)
 							.setAuthor({ name: '🔻 N8VENTURES (with help from Manokii🐔) 🔻', iconURL: 'https://cdn.discordapp.com/attachments/407797217697726464/1013433127823224943/icon.png' })
 							.setThumbnail('https://media.discordapp.net/attachments/407797217697726464/1013432911158054973/Colored_White_cropped.png')
 							.addFields(
 								placements.map((p) => ({
-									name: `🏴‍☠️ ${p.teamName} 🏴‍☠️`,
+									name: `🏴‍☠️ ${p.teamName}`,
+									value: `☠️ Kills: ${p.kills} 
+										👟 Placement: ${p.teamPlacement}
+										🏅 **Total Points: ${p.TotalPoints}** \n ------------------------`,
+								})),
+							)
+							.setFooter({ text: '🔻N8VENTURES x 🐔Manokii 2022', iconURL: 'https://cdn.discordapp.com/attachments/407797217697726464/1013433127823224943/icon.png' })
+							.setTimestamp();
+
+						const FullResultsEmbed = new EmbedBuilder()
+							.setColor(0xFF9900)
+							.setTitle('Apex Tournament API Discord Bot \n' + '**🎲 MATCH **' + parseInt(parseInt(x) + parseInt(b) + parseInt(1)) + '\n 🕒 ' + nt)
+							.setAuthor({ name: '🔻 N8VENTURES (with help from Manokii🐔) 🔻', iconURL: 'https://cdn.discordapp.com/attachments/407797217697726464/1013433127823224943/icon.png' })
+							.setThumbnail('https://media.discordapp.net/attachments/407797217697726464/1013432911158054973/Colored_White_cropped.png')
+							.addFields(
+								placements.map((p) => ({
+									name: `🏴‍☠️ ${p.teamName}`,
 									value: `#️⃣  Team Number ${p.teamNum}
-									🔥 Players: ${p.playerName} 	
+									🔥 Players: ${p.playerName}
 									☠️ Kills: ${p.kills}
 									👟 Placement: ${p.teamPlacement}
 									🏅 **Total Points: ${p.TotalPoints}** \n ------------------------`,
 								})),
 							)
-							.setFooter({ text: 'N8VENTURES🔻  x  Manokii🐔 2022', iconURL: 'https://cdn.discordapp.com/attachments/407797217697726464/1013433127823224943/icon.png' })
+							.setFooter({ text: '🔻N8VENTURES x 🐔Manokii 2022', iconURL: 'https://cdn.discordapp.com/attachments/407797217697726464/1013433127823224943/icon.png' })
 							.setTimestamp();
 
-						wait(2000);
-						interaction.followUp({ embeds: [ResultsEmbed] });
+						const QuickResultsEmbed = new EmbedBuilder()
+							.setColor(0x00FFFF)
+							.setTitle('Apex Tournament API Discord Bot \n' + '**🎲 MATCH **' + parseInt(parseInt(x) + parseInt(b) + parseInt(1)) + '\n 🕒 ' + nt)
+							.setAuthor({ name: '🔻 N8VENTURES (with help from Manokii🐔) 🔻', iconURL: 'https://cdn.discordapp.com/attachments/407797217697726464/1013433127823224943/icon.png' })
+							.setThumbnail('https://media.discordapp.net/attachments/407797217697726464/1013432911158054973/Colored_White_cropped.png')
+							.addFields(
+								placements.map((p) => ({
+									name: `🏴‍☠️ ${p.teamName}`,
+									value: `🏅 **Total Points: ${p.TotalPoints}** \n ------------------------`,
+								})),
+							)
+							.setFooter({ text: '🔻N8VENTURES x 🐔Manokii 2022', iconURL: 'https://cdn.discordapp.com/attachments/407797217697726464/1013433127823224943/icon.png' })
+							.setTimestamp();
+
+
+						const optionJson = fs.readFileSync(
+							'./commands/apextournamentapi/apexoptions/apexoption.json',
+							{ encoding: 'utf8', flag: 'r' },
+						);
+
+						const option = JSON.parse(optionJson);
+
+						switch (option) {
+						case 'first_option':
+							await wait(1000);
+							await interaction.followUp({ embeds: [ResultsEmbed] });
+							break;
+
+						case 'second_option':
+							await wait(1000);
+							await interaction.followUp({ embeds: [FullResultsEmbed] });
+							break;
+
+						case 'third_option':
+							await wait(1000);
+							await interaction.followUp({ embeds: [QuickResultsEmbed] });
+							break;
+						}
+
 					}
 					if (m == x - 1) {
-						wait(4000);
-						interaction.editReply('\n **🎉   ALL MATCHES LOADED   🎉**\n');
-						wait(5000);
+						await wait(2000);
+						await interaction.editReply('\n **🎉   ALL MATCHES LOADED   🎉**\n');
+						await interaction.followUp({
+							content: `\n **🎉   ALL MATCHES LOADED, ${interaction.user}  🎉**\n`,
+							ephemeral: true });
+						// await wait(5000);
 						json = [];
 					}
 				}

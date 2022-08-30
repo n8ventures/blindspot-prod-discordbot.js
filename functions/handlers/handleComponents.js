@@ -8,7 +8,6 @@ module.exports = (client) => {
 				.readdirSync(`./components/${folder}`)
 				.filter((file) => file.endsWith('.js'));
 
-			// const { buttons, selectMenus } = client;
 			const { selectMenus, modals } = client;
 
 			switch (folder) {

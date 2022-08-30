@@ -132,5 +132,4 @@ dist
 # additional files
 .vscode/
 ignoreme/
-ignoreme/const moment = require('moment-timezone'.js
 config.json

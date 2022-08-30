@@ -38,7 +38,7 @@ module.exports = {
 		);
 		const ApexOptionsClear = '';
 		const jsonContent = JSON.stringify(ApexOptionsClear);
-		fs.writeFileSync('./commands/apextournamentapi/apexoptions/apexoption.json', jsonContent);
+		fs.writeFileSync('./commands/apextournamentapi/apexoptions/apexmodules/apexoption.json', jsonContent);
 
 		await interaction.deferReply();
 		// await wait(1000);

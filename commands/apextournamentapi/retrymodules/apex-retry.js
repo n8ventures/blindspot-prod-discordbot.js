@@ -1,5 +1,3 @@
-// const modalApexresults = require('./modal-apexresults');
-
 const menuApexresultsRetry = require('./menu-apexresults-retry');
 
 module.exports = {
@@ -8,7 +6,6 @@ module.exports = {
 	},
 	async execute(interaction, client) {
 
-		// await modalApexresults.execute(interaction, client);
 		await menuApexresultsRetry.execute(interaction, client);
 
 	},

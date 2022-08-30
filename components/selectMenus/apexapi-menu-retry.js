@@ -1,4 +1,4 @@
-const modalApexresults = require('../../commands/apextournamentapi/apexoptions/modal-apexresults');
+const modalApexresults = require('../../commands/apextournamentapi/apexoptions/apexmodules/modal-apexresults');
 const fs = require('node:fs');
 // const wait = require('node:timers/promises').setTimeout;
 
