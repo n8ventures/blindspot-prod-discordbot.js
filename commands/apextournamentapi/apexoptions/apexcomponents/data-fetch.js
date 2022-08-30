@@ -41,11 +41,10 @@ module.exports = {
 				}
 
 				if (isEmpty(json)) {
-					await interaction.reply({
+					await interaction.editReply({
 						content: '**⚠   MATCHES NOT DETECTED!   ⚠** \n\n**⚠  PLEASE INPUT CORRECT TOKEN OR WAIT FOR THE MATCH TO FINISH!!!**  ⚠',
 						ephemeral: true,
 					});
-					await wait(3000);
 					await apexRetry.execute(interaction, client);
 				}
 				else {
