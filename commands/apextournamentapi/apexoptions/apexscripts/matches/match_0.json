@@ -1,0 +1,189 @@
+[
+  {
+    "teamName": "Limitless Tempo",
+    "kills": 13,
+    "teamPlacement": 1,
+    "PlacementPoints": 12,
+    "TotalPoints": 25,
+    "playerName": ["LIM_Cracked-FB", "LIM_Sintelle", "LIM_KnrtJM"],
+    "teamNum": 13
+  },
+  {
+    "teamName": "Version 1",
+    "kills": 9,
+    "teamPlacement": 2,
+    "PlacementPoints": 9,
+    "TotalPoints": 18,
+    "playerName": ["V1-myAntu", "V1-LiLmimzy", "V1-Aikyu"],
+    "teamNum": 18
+  },
+  {
+    "teamName": "IGx ILAM",
+    "kills": 5,
+    "teamPlacement": 6,
+    "PlacementPoints": 3,
+    "TotalPoints": 8,
+    "playerName": ["IGx-Roid", "Bidam-IGx", "IGx-DobbySan"],
+    "teamNum": 11
+  },
+  {
+    "teamName": "IGx Gobilamers",
+    "kills": 1,
+    "teamPlacement": 3,
+    "PlacementPoints": 7,
+    "TotalPoints": 8,
+    "playerName": ["EXE_AlyasPogi", "IGx-KSavage_FB", "IGx-Caz"],
+    "teamNum": 12
+  },
+  {
+    "teamName": "DFT Reapers",
+    "kills": 5,
+    "teamPlacement": 8,
+    "PlacementPoints": 2,
+    "TotalPoints": 7,
+    "playerName": ["DFT-RonMctavish", "DFT-CJ"],
+    "teamNum": 10
+  },
+  {
+    "teamName": "AimAssist",
+    "kills": 6,
+    "teamPlacement": 16,
+    "PlacementPoints": 0,
+    "TotalPoints": 6,
+    "playerName": ["AA-Dark-GNCD", "AA-Xaveyy-MYM", "AA-Lawrence-SMPH"],
+    "teamNum": 4
+  },
+  {
+    "teamName": "Team7",
+    "kills": 1,
+    "teamPlacement": 4,
+    "PlacementPoints": 5,
+    "TotalPoints": 6,
+    "playerName": ["eHakuu", "YnigoDominguez", "AkkiFB"],
+    "teamNum": 15
+  },
+  {
+    "teamName": "Daruma Simp",
+    "kills": 3,
+    "teamPlacement": 12,
+    "PlacementPoints": 1,
+    "TotalPoints": 4,
+    "playerName": ["DxB-TalkDerpy", "DxB-Shouganai", "DxB-GiggelsFBTV"],
+    "teamNum": 9
+  },
+  {
+    "teamName": "Big Duck Energy",
+    "kills": 3,
+    "teamPlacement": 15,
+    "PlacementPoints": 1,
+    "TotalPoints": 4,
+    "playerName": ["BookerTix", "bun invasion", "Yamotsu"],
+    "teamNum": 6
+  },
+  {
+    "teamName": "WAR Omega",
+    "kills": 0,
+    "teamPlacement": 5,
+    "PlacementPoints": 4,
+    "TotalPoints": 4,
+    "playerName": ["WAR_xRhythm", "WAR_magsasaka", "WAR_EmberTTV"],
+    "teamNum": 19
+  },
+  {
+    "teamName": "BadSaint",
+    "kills": 1,
+    "teamPlacement": 9,
+    "PlacementPoints": 2,
+    "TotalPoints": 3,
+    "playerName": ["Jaspo", "PAPI", "GHOSTRIDEMIKO"],
+    "teamNum": 5
+  },
+  {
+    "teamName": "Wrath Esports",
+    "kills": 2,
+    "teamPlacement": 14,
+    "PlacementPoints": 1,
+    "TotalPoints": 3,
+    "playerName": [
+      "WRATH_Wratheus",
+      "WRATH_Atomic",
+      "WRATH_Atomic",
+      "WRATH Ashura",
+      "WRATH_Wratheus",
+      "WRATH Ashura"
+    ],
+    "teamNum": 21
+  },
+  {
+    "teamName": "Charge",
+    "kills": 0,
+    "teamPlacement": 7,
+    "PlacementPoints": 3,
+    "TotalPoints": 3,
+    "playerName": ["EngrPrime", "GDAssassin", "hanaciel"],
+    "teamNum": 7
+  },
+  {
+    "teamName": "3Dudes",
+    "kills": 2,
+    "teamPlacement": 11,
+    "PlacementPoints": 1,
+    "TotalPoints": 3,
+    "playerName": ["CULT-FastZeez", "CULT-IIVATOR"],
+    "teamNum": 2
+  },
+  {
+    "teamName": "WAR Sigma",
+    "kills": 0,
+    "teamPlacement": 10,
+    "PlacementPoints": 2,
+    "TotalPoints": 2,
+    "playerName": ["WAR_GulayGabs", "WAR_xPanda", "WAR_KobexTokyo"],
+    "teamNum": 20
+  },
+  {
+    "teamName": "3Kings",
+    "kills": 0,
+    "teamPlacement": 13,
+    "PlacementPoints": 1,
+    "TotalPoints": 1,
+    "playerName": ["3KG_Dangcom", "3KG_JCiMA", "3KG_BossReeey"],
+    "teamNum": 3
+  },
+  {
+    "teamName": "Daruma Boys",
+    "kills": 1,
+    "teamPlacement": 18,
+    "PlacementPoints": 0,
+    "TotalPoints": 1,
+    "playerName": ["DxB-JecOnyx", "<DxB> KhillMoreTV", "DxB-23Tikss"],
+    "teamNum": 8
+  },
+  {
+    "teamName": "HTIM",
+    "kills": 0,
+    "teamPlacement": 19,
+    "PlacementPoints": 0,
+    "TotalPoints": 0,
+    "playerName": ["ZnivoooO-FB", "HTIM-Amashiro"],
+    "teamNum": 16
+  },
+  {
+    "teamName": "TheTiltSquad",
+    "kills": 0,
+    "teamPlacement": 20,
+    "PlacementPoints": 0,
+    "TotalPoints": 0,
+    "playerName": ["fb-vernst2.0", "TrippyTrippy-FB"],
+    "teamNum": 17
+  },
+  {
+    "teamName": "OG Cyan",
+    "kills": 0,
+    "teamPlacement": 17,
+    "PlacementPoints": 0,
+    "TotalPoints": 0,
+    "playerName": ["OG_Wissu", "OG_MCDJKing", "OG_Koi."],
+    "teamNum": 14
+  }
+]
