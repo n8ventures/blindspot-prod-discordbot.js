@@ -1,9 +1,7 @@
-const { InteractionType } = require('discord.js');
-
 module.exports = {
 	name: 'interactionCreate',
 	async execute(interaction, client) {
-		console.log(`${interaction.user.tag} triggered an interaction.`);
+		console.log(`${interaction.user.tag} triggered an interaction`);
 
 		if (interaction.isChatInputCommand()) {
 			const { commands } = client;
@@ -34,7 +32,7 @@ module.exports = {
 				console.error(error);
 			}
 		}
-		else if (interaction.type == InteractionType.ModalSubmit) {
+		else if (interaction.isModalSubmit()) {
 			const { modals } = client;
 			const { customId } = interaction;
 			const modal = modals.get(customId);
@@ -44,6 +42,18 @@ module.exports = {
 			}
 			catch (error) {
 				console.error(error);
+			}
+		}
+		else if (interaction.isButton()) {
+			const { buttons } = client;
+			const { customId } = interaction;
+			const button = buttons.get(customId);
+			if (!button) return new Error('there is no code on this button');
+			try {
+				await button.execute(interaction, client);
+			}
+			catch (err) {
+				console.error(err);
 			}
 		}
 	},

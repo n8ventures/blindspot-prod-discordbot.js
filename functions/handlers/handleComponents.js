@@ -8,15 +8,15 @@ module.exports = (client) => {
 				.readdirSync(`./components/${folder}`)
 				.filter((file) => file.endsWith('.js'));
 
-			const { selectMenus, modals } = client;
+			const { selectMenus, modals, buttons } = client;
 
 			switch (folder) {
-			// case 'buttons':
-			// 	for (const file of componentFiles) {
-			// 		const button = require(`../../components/${folder}/${file}`);
-			// 		buttons.set(button.data.name, button);
-			// 	}
-			// 	break;
+			case 'buttons':
+				for (const file of componentFiles) {
+					const button = require(`../../components/${folder}/${file}`);
+					buttons.set(button.data.name, button);
+				}
+				break;
 			case 'selectMenus':
 				for (const file of componentFiles) {
 					const menu = require(`../../components/${folder}/${file}`);

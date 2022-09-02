@@ -1,5 +1,5 @@
 const fs = require('node:fs');
-const startdatafetch = require('../../commands/apextournamentapi/apexoptions/apexcomponents/data-fetch');
+const startdatafetch = require('../../commands/apextournamentapi/apexoptions/apexscripts/data-fetch');
 
 module.exports = {
 	data: {
@@ -16,7 +16,7 @@ module.exports = {
 
 		const jsonContent = JSON.stringify(ApexTokenInput);
 		fs.writeFileSync(
-			'./commands/apextournamentapi/apexoptions/apexstattoken.json',
+			'./commands/apextournamentapi/apexoptions/apexmodules/apexstattoken.json',
 			jsonContent,
 		);
 

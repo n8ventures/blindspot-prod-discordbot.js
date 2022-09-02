@@ -1,4 +1,6 @@
 const fs = require('node:fs');
+const path = require('path');
+const matchdir = './commands/apextournamentapi/apexoptions/apexscripts/matches/';
 const {
 	SlashCommandBuilder,
 	ActionRowBuilder,
@@ -38,7 +40,18 @@ module.exports = {
 		);
 		const ApexOptionsClear = '';
 		const jsonContent = JSON.stringify(ApexOptionsClear);
-		fs.writeFileSync('./commands/apextournamentapi/apexoptions/apexmodules/apexoption.json', jsonContent);
+		fs.writeFileSync(
+			'./commands/apextournamentapi/apexoptions/apexmodules/apexoption.json',
+			jsonContent,
+		);
+		fs.readdir(matchdir, (err, files) => {
+			if (err) throw err;
+			for (const file of files) {
+				fs.unlink(path.join(matchdir, file), err => {
+					if (err) throw err;
+				});
+			}
+		});
 
 		await interaction.deferReply();
 		// await wait(1000);

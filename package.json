@@ -1,6 +1,6 @@
 {
   "name": "blindspot-prod-discord-bot",
-  "version": "2.0.0-alpha",
+  "version": "2.1.0",
   "description": "Apex Tournament API to calculate Apex Custom Tournament points",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/n8ventures/ApexAPI-Discord-OAS-BOT.js.git"
+    "url": "git+https://github.com/n8ventures/blindspot-prod-discordbot.js"
   },
   "keywords": [
     "apex",
@@ -16,14 +16,16 @@
     "calculate",
     "points",
     "apex",
-    "legends"
+    "legends",
+    "blindspot productions",
+    "n8ventures"
   ],
   "author": "N8VENTURES",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/n8ventures/ApexAPI-Discord-OAS-BOT.js/issues"
+    "url": "https://github.com/n8ventures/blindspot-prod-discordbot.js/issues"
   },
-  "homepage": "https://github.com/n8ventures/ApexAPI-Discord-OAS-BOT.js#readme",
+  "homepage": "https://github.com/n8ventures/blindspot-prod-discordbot.js#readme",
   "dependencies": {
     "@discordjs/rest": "^1.1.0",
     "discord.js": "^14.3.0",
