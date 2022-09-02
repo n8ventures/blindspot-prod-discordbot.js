@@ -1,6 +1,6 @@
 # BlindSpot Productions Discord Bot ***(version 2.1.0)***
 
-This bot uses [Discord.js](https://discord.js.org) (Discord v14)
+This bot uses [Discord.js](https://discord.js.org) ([Discord v14](https://discord.com/developers/docs/intro))
 
 ## Requirements
 [NodeJS](https://nodejs.org/en/)
