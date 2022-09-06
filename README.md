@@ -2,6 +2,15 @@
 
 This bot uses [Discord.js](https://discord.js.org) ([Discord v14](https://discord.com/developers/docs/intro))
 
+Current features:
+ - Use the Apex Legends Tournament API and grab match data.  Supports:
+   - Full Results (all data displayed)
+   - Essential Results (all data but team number displayed)
+   - Quick Results (Team Name and Total Points only displayed)
+   
+ - [Apex Legends Status API](https://apexlegendsapi.com/)
+    - Map Rotation.
+    
 ## Requirements
 [NodeJS](https://nodejs.org/en/)
 ## Recommended (although not required)
