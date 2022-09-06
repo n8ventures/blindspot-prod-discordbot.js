@@ -7,13 +7,14 @@ Current features:
    - Full Results (all data displayed)
    - Essential Results (all data but team number displayed)
    - Quick Results (Team Name and Total Points only displayed)
+   - *EXPERIMENTAL* Calculates all matches in one token. Read [2.1.0 Patch Notes](https://github.com/n8ventures/blindspot-prod-discordbot.js/edit/main/README.md#patch-notes-210) for more information.
    
  - [Apex Legends Status API](https://apexlegendsapi.com/)
     - Map Rotation.
     
 ## Requirements
 [NodeJS](https://nodejs.org/en/)
-## Recommended (although not required)
+## Recommended
 [git](https://git-scm.com)
 
 [Visual Studio Code](https://code.visualstudio.com/)
@@ -39,7 +40,7 @@ to start the bot:
 node .
 ```
 
-## Patch Notes (2.1.0) 
+## 2.1.0 Patch Notes
 ***NEW*** Calculate all Apex matches under that one Apex token.
 
 **this is currently experimental due to user input error.*
@@ -54,17 +55,17 @@ to use this feature, you need to have multiple matches in that one token. Use `/
 Improved optimization
 - Cleaned and tidied up code (less duplicates, more smart coding)
         
-## Patch Notes (2.0.0b2)
+## 2.0.0b2 Patch Notes
 apex-private-results command
 - Full Apex Results - WORKING ✅
 - Quick Apex Results - WORKING ✅
 
-## Patch Notes (2.0.0b1)
+## 2.0.0b1 Patch Notes
 apex-private-results command
 - Full Apex Results - WORKING (needs tests) ⚠️
 - Quick Apex Results - WORKING (needs tests) ⚠️
 
-## Patch Notes (2.0.0a) 
+## 2.0.0a Patch Notes 
 Updated code to Discord v14!
 - Supports slash commands.
 - DM-commands supported.
