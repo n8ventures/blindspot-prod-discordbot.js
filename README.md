@@ -7,7 +7,7 @@ Current features:
    - Full Results (all data displayed)
    - Essential Results (all data but team number displayed)
    - Quick Results (Team Name and Total Points only displayed)
-   - *EXPERIMENTAL* Calculates all matches in one token. Read [2.1.0 Patch Notes](https://github.com/n8ventures/blindspot-prod-discordbot.js/edit/main/README.md#patch-notes-210) for more information.
+   - *__(EXPERIMENTAL)__* Calculates all matches in one token. Read [2.1.0 Patch Notes](https://github.com/n8ventures/blindspot-prod-discordbot.js/edit/main/README.md#patch-notes-210) for more information.
    
  - [Apex Legends Status API](https://apexlegendsapi.com/)
     - Map Rotation.
